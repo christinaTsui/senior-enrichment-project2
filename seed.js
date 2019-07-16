@@ -1,7 +1,7 @@
 const db = require('./server/db/_db')
 const {green, red} = require('chalk')
 const { Aircrafts, Countries } = require('./server/db/models')
-
+const Sequelize = require('sequelize')
 
 async function seed () {
   await db.sync({force: true})
@@ -21,7 +21,7 @@ async function seed () {
 
   await Countries.create({
     name: 'USA',
-    GFI: '1.5',
+    GFI: 1.5,
     flagUrl: 'https://image.flaticon.com/icons/svg/252/252025.svg',
   })
 

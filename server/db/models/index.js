@@ -9,15 +9,18 @@
 'use strict'
 const Aircrafts = require('./Aircrafts')
 const Countries = require('./Countries')
-const _db = require('../_db');
+const db = require('../_db');
+const Sequelize = require('sequelize')
 
-Aircrafts.belongsTo(Countries);
-Countries.hasMany(Aircrafts);//i think it should be belongsToMany here
+const AircraftsCountries = db.define('aircrafts_countries', {
+  type: Sequelize.STRING,
+})
 
-//* can have many aircrafts assigned (may have none)
+Aircrafts.hasMany(Countries);
+Countries.belongsToMany(Aircrafts, { through: AircraftsCountries});
 
 module.exports = {
   Aircrafts,
   Countries,
-  _db
+  db
 }

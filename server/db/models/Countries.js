@@ -12,7 +12,7 @@ const Countries = db.define('countries', {
   },
 
   GFI: {
-    type: Sequelize.RANGE(Sequelize.DECIMAL),
+    type: Sequelize.DECIMAL,
     allowNull: false,
     validate: {
       notEmpty: true,
@@ -26,7 +26,6 @@ const Countries = db.define('countries', {
     defaultValue: 'https://image.flaticon.com/icons/svg/252/252025.svg',
 
   },
-
 
   });
 

@@ -12,7 +12,7 @@ const Aircrafts = db.define('aircrafts', {
     }
   },
   model: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
     validate: {
       notEmpty: true,
@@ -27,9 +27,9 @@ const Aircrafts = db.define('aircrafts', {
   },
   type: {
     type: Sequelize.STRING,
-    validate:{
-      isIn: [['Attacker', 'Bomber', 'Versatile', 'Transport','Reconoissance', 'Rescue']],
-    }
+    // validate:{
+    //   isIn: [['Attacker', 'Bomber', 'Versatile', 'Transport','Reconoissance', 'Rescue']],
+    // }
   },
   cost: {
     type: Sequelize.DECIMAL, //do i have to do more so that it takes $1million and stores it at 1 in the database
@@ -44,13 +44,13 @@ const Aircrafts = db.define('aircrafts', {
   succeeded: {
     type: Sequelize.STRING //this should track the aircraft it succeeds via a reference called 'succeeded'
   },
-  // country: {
-  //   type: Sequelize.STRING,
-  //   allowNull: false,
-  //   validate: {
-  //     notEmpty: true,
-  //   }
-  // },
+  country: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    validate: {
+      notEmpty: true,
+    }
+  },
 });
 
 Aircrafts.getAircraftByType = function (type) {
