@@ -13,7 +13,7 @@ Make a thing **again**!
 ## Requirements
 
 ### The Premise
- Design a website for aircraft fanatics 🤓 and create a RESTful API that allows you to manage these aircrafts! 
+ Design a website for aircraft fanatics 🤓 and create a RESTful API that allows you to manage these aircrafts!
 
 ### The tools
 
@@ -44,7 +44,7 @@ Use at least Sequelize, Express, React, Redux, and React-Redux when creating thi
   * must have a method `getTopFive` which finds the top 5 strongest nations sorted by GFI (0 is the strongest, 10 is the weakest)
 
 ### Views and Functionality
-
+v
 - Navigation: as a user I...
   * will land on **Home** by default
   * can navigate to **Countries** from **Home**
@@ -74,7 +74,7 @@ Use at least Sequelize, Express, React, Redux, and React-Redux when creating thi
 ### Routes
 
 ```
-GET 
+GET
 - all countries
   - populated with aircrafts
 - a country by id
@@ -111,7 +111,7 @@ DELETE
 
 ### How to test functionality without a frontend
 - GET: use your browser
-- POST / PUT / DELETE : 
+- POST / PUT / DELETE :
  - CLI (command line interface) with `curl`
    - e.g. `curl -H "Content-Type: application/json" -X POST -d '{"username":"kate","password":"1234"}' http://localhost:3000/api/login`
    - `-H`: headers. `-X`: verb. `-d`: data (must be of the type specified in headers). http://[address]:[port]/[route_path]
