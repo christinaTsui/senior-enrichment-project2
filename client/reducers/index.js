@@ -21,7 +21,7 @@ export const fetchAircrafts = () => {
   return async (dispatch) => {
     dispatch(gettingAircrafts())
     const { data } = await axios.get('/api/aircrafts')
-    dispatch(gotAircrafts)
+    dispatch(gotAircrafts(data))
   }
 }
 
@@ -39,7 +39,7 @@ const rootReducer = function(state = initialState, action) {
     case GETTING_AIRCRAFTS:
       return {...state, loading: true};
     case GOT_AIRCRAFTS:
-      return {...state, loading: false, candies: action.data}
+      return {...state, loading: false, aircrafts: action.data}
     default: return state
   }
 };

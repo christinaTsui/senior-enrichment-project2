@@ -3,15 +3,30 @@ import { connect } from 'react-redux'
 import { fetchAircrafts } from '../reducers';
 
 class AllAircrafts extends React.Component {
-  // if (loading) return <div>Loading...</div>
+
+  componentDidMount() {
+    this.props.fetchAircrafts();
+  }
 
   render() {
-    // console.log('this.props', props)
+    // console.log(this.props)
+    const {loading, aircrafts} = this.props;
+    if (loading) return <div>Loading...</div>
     return (
-      <div>All Aircrafts</div>
+      <div>
+        {aircrafts.map(aircraft => {
+          return (
+            <div key={aircraft.id}>
+              <img src={aircraft.imageUrl}/>
+              <h2> {aircraft.name} </h2>
+            </div>
+          )
+        })}
+      </div>
     )
   }
 }
+
 
 const mapState = (state) => ({
   loading: state.loading,
