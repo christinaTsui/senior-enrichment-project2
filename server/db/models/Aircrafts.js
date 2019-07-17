@@ -25,8 +25,8 @@ const Aircrafts = db.define('aircrafts', {
     }
   },
   type: {
-    type: Sequelize.STRING,
-    // validate:{
+    type: Sequelize.ENUM('Attacker', 'Bomber', 'Versatile', 'Transport','Reconoissance', 'Rescue'),
+    // validate: {
     //   isIn: [['Attacker', 'Bomber', 'Versatile', 'Transport','Reconoissance', 'Rescue']],
     // }
   },
@@ -34,7 +34,7 @@ const Aircrafts = db.define('aircrafts', {
     type: Sequelize.DECIMAL, //do i have to do more so that it takes $1million and stores it at 1 in the database
   },
   imageUrl: {
-    type: Sequelize.STRING,
+    type: Sequelize.STRING, //should this be virtual?
     defaultValue: 'https://image.flaticon.com/icons/svg/1068/1068015.svg'
   },
   description: {
@@ -61,8 +61,17 @@ Aircrafts.getAircraftByType = function (type) {
     }).catch(next)
 }
 
-Aircrafts.change1to1000000 = function (num) {
-  return num * 1000000; //this needs to be changed so that it finds the airplane, then it takes the cost of that plane and returns that value multiplied by 10000000.
+Aircrafts.change1to1000000 = function (aircraftId) {
+  //this needs to be changed so that it finds the airplane, then it takes the cost of that plane and returns that value multiplied by 10000000.
+  //must have a method to change the `cost` of 1 to $1,000,000 when retrieving records
+  //not tested //is this a hook for beforeCreate or something?
+  Aircrafts.findAll({
+    where: {id: aircraftId}
+  }).then((aircraft) => {
+    let cost = aircraft.cost;
+    let costTimesMil = cost * 1000000;
+    res.send(costTimesMil)
+  }).catch(next)
 }
 
 module.exports = Aircrafts
