@@ -1,10 +1,28 @@
-import React from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import { fetchAircrafts } from '../reducers';
 
-const AllAircrafts = () => {
-  if (loading) return <div>Loading...</div>;
-  return (
-    <div>All Aircrafts</div>
-  )
+class AllAircrafts extends React.Component {
+  // if (loading) return <div>Loading...</div>
+
+  render() {
+    // console.log('this.props', props)
+    return (
+      <div>All Aircrafts</div>
+    )
+  }
 }
 
-export default AllAircrafts;
+const mapState = (state) => ({
+  loading: state.loading,
+  aircrafts: state.aircrafts,
+})
+
+const mapDispatch = (dispatch) => ({
+  fetchAircrafts: () => {
+    const thunk = fetchAircrafts()
+    dispatch(thunk)
+  }
+})
+
+export default connect(mapState, mapDispatch)(AllAircrafts);
