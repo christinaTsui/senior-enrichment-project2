@@ -1,16 +1,37 @@
 import React from 'react'
+import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
+import Home from './Home';
+import AllCountries from './AllCountries';
+import AllAircrafts from './AllAircrafts';
+import NotFound from './NotFound'
 
 const Root = () => {
   return (
-    <div>
-      <nav>
-        Aircraft Fanatics United
-      </nav>
-      <main>
-        <h1> Welcome!</h1>
-        <p> Would you like to see Countries or Aircrafts?</p>
-      </main>
-    </div>
+    <Router>
+      <div>
+        <nav>
+          Aircraft Fanatics United
+          <div id="navbarId">
+              <div>
+                <Link to="/" className="navlink">Home</Link>
+                <Link to="/Countries" className="navlink">All Supporting Countries</Link>
+                <Link to="/Aircrafts" className="navlink">All Supported Aircrafts</Link>
+              </div>
+          </div>
+        </nav>
+        <main>
+
+          <h1> Welcome!</h1>
+          <p> Would you like to see Countries or Aircrafts?</p>
+        </main>
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/Aircrafts" component={AllAircrafts}/>
+          <Route exact path="/Countries" component={AllCountries}/>
+          <Route component={NotFound}/>
+        </Switch>
+      </div>
+    </Router>
   )
 }
 

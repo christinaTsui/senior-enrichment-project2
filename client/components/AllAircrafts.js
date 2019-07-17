@@ -1,9 +1,9 @@
 import React from 'react'
 
-const AllAicrafts = () => {
+const AllAircrafts = () => {
   return (
     <div>All Aircrafts</div>
   )
 }
 
-export default AllAicrafts;
+export default AllAircrafts;
