@@ -9,8 +9,8 @@ const { Countries } = require('../../db/models')
 router.get('/', async (req, res, next) => {
   console.log("Looking for All Countries!")
   try {
-    const allAircrafts = await Countries.findAll();
-    res.status(200).json(allAircrafts)
+    const allCountries = await Countries.findAll();
+    res.status(200).json(allCountries)
   } catch (err) {
     next(err)
   }

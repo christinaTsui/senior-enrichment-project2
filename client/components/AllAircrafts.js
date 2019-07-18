@@ -7,11 +7,12 @@ import SingleAircraft from './SingleAircraft'
 class AllAircrafts extends React.Component {
 
   componentDidMount() {
+    console.log("Component is Mounting")
     this.props.fetchAircrafts();
   }
 
   render() {
-    // console.log(this.props)
+    console.log("This is the props for all aircrafts",this.props)
     const {loading, aircrafts} = this.props;
     if (loading) return <div>Loading...</div>
     return (
