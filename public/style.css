@@ -1,9 +1,15 @@
 nav {
   align-items: center;
-  background-color: lightblue;
+  align-items: center;
+  border-bottom: 1px solid grey;
+  font-family: Arial;
+  font-style: bold;
   font-size: 18px;
   display: flex;
   height: 80px;
+  padding: 5px;
+}
+div {
   padding: 10px;
 }
 
@@ -11,10 +17,21 @@ main {
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-
 }
 
 #navbarId {
-  font-size: 30px;
+  font-size: 18px;
+  padding: 20px;
 }
+
+#nav-left {
+  float: left
+}
+
+#nav-right {
+  float: right;
+  padding: 20px;
+}
+/* #nav-inner-right {
+
+} */

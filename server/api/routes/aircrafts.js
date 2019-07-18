@@ -16,5 +16,18 @@ router.get('/', async (req, res, next) => {
   }
 });
 
+router.get('/:id', async (req, res, next) => {
+  console.log("Looking for All Aircrafts!")
+  try {
+    const theChosenOne = await Aircrafts.findOne({
+      where: {id: req.params.id}
+    });
+    res.status(200).json(theChosenOne)
+  } catch (err) {
+    next(err)
+  }
+});
+
+
 
 module.exports = router;
