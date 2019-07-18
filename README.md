@@ -46,20 +46,20 @@ Use at least Sequelize, Express, React, Redux, and React-Redux when creating thi
 ### Views and Functionality
 v
 - Navigation: as a user I...
-  * will land on **Home** by default
-  * can navigate to **Countries** from **Home**
-  * can navigate to **Aircrafts** from **Home**
+  [***] will land on **Home** by default
+  [***] can navigate to **Countries** from **Home**
+  [***] can navigate to **Aircrafts** from **Home**
   * can navigate to view a top 5 **Single Country** from **Home** (see `Views` below for more details)
-  * can navigate to view a **Single Country** from **Countries**
+  [*] can navigate to view a **Single Country** from **Countries**
   * can navigate to view a **Single Aircraft** from **Aircrafts**
   * can navigate to view a **Single Aircraft** from **Single Country** (for any aircraft that the country owns)
   * can navigate to view an aircrafts' **Single Country** from **Single Aircraft**
 
 - Views: as a user I...
-  * see a navbar in every view
+  [***] see a navbar in every view
   * see a scoreboard of the top 5 countries, in order, measured by GFI (Global Firepower Index - 0 is strongest(top), 10 is the weakest(bottom)) on the **Home** view
   * see a list of all countries on the **Countries** view
-  * see a list of all aircrafts on the **Aircrafts** view
+  [***] see a list of all aircrafts on the **Aircrafts** view
   * see details about a country on the **Single Country** view, including that country's aircrafts
   * see details about an aircraft on the **Single Aircraft** view, including that aircrafts' country
 

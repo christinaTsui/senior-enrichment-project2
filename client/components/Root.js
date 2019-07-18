@@ -12,7 +12,7 @@ const Root = () => {
       <div>
         <nav>
           <img src="https://i.warbycdn.com/v/c/assets/navigation/image/email-capture/1/96a760c4c2.png"/>
-          Dimon Flights
+          Planesaurus
         <div id="navbarId">
             <div id="nav-left">
               <Link to="/" className="navlink">Home</Link>

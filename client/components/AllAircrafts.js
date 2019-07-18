@@ -16,12 +16,14 @@ class AllAircrafts extends React.Component {
     if (loading) return <div>Loading...</div>
     return (
       <div>
-        <h2>All Supported Aircrafts</h2>
+        <h2 id="all-aircrafts-h2">{aircrafts.length} Aircrafts Available</h2>
+        <p id="all-aircrafts-p">Browse and Add planes to your heart's content.</p>
+        <img src="https://images.unsplash.com/photo-1484666086787-6cd0ccd39860?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80"/>
         <ul>
           {aircrafts.map(aircraft => {
             return (
               <li key={aircraft.id}>
-                <Link to={`/Aircrafts/${aircraft.id}`} className="all-aircrafts-link">{aircraft.model}</Link>
+                <Link to={`/Aircrafts/${aircraft.id}`} className="all-aircrafts-link">{aircraft.make}</Link>
                 <Switch>
                   <Route exact path={`/Aircrafts/${aircraft.id}`} component={SingleAircraft}/>
                 </Switch>

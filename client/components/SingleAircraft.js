@@ -17,12 +17,12 @@ class SingleAircraft extends React.Component {
         <img src={aircraft.imageUrl}/>
         <h2>Make: {aircraft.make} </h2>
         <h2>Model: {aircraft.model} </h2>
+        <h2>Country: {aircraft.country} </h2>
         <h2>About The {`${aircraft.make}`} : {aircraft.description} </h2>
       </div>
     );
   }
 }
-
 
 const mapState = (state) => ({
   loading: state.loading,

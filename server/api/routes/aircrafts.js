@@ -17,7 +17,7 @@ router.get('/', async (req, res, next) => {
 });
 
 router.get('/:id', async (req, res, next) => {
-  console.log("Looking for All Aircrafts!")
+  console.log("Looking for the chosen Aircraft!")
   try {
     const theChosenOne = await Aircrafts.findOne({
       where: {id: req.params.id}

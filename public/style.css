@@ -1,7 +1,7 @@
 nav {
   align-items: center;
   align-items: center;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid lightblue;
   font-family: Arial;
   font-style: bold;
   font-size: 18px;
@@ -10,7 +10,8 @@ nav {
   padding: 5px;
 }
 div {
-  padding: 10px;
+  /* padding: 10px; */
+  overflow: hidden;
 }
 
 main {
@@ -25,12 +26,28 @@ main {
 }
 
 #nav-left {
-  float: left
+  float: left;
+  padding: 10px;
 }
 
 #nav-right {
   float: right;
   padding: 20px;
+}
+
+#all-aircrafts-h2 {
+  background-image: url("https://images.unsplash.com/photo-1484666086787-6cd0ccd39860?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80")
+}
+
+h2 {
+  align-items: center;
+  padding: 10px;
+}
+
+#all-aircrafts-p {
+  font-style: italic;
+  margin: 10px;
+  font-family: cursive;
 }
 /* #nav-inner-right {
 

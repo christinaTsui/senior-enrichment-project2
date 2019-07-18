@@ -6,10 +6,6 @@ const Sequelize = require('sequelize')
 async function seed () {
   await db.sync({force: true})
 
-  // await AircraftsCountries.create({
-  //   type: 'TRY AGAIN',
-  // })
-
   await Aircrafts.create({
     make: 'Orion',
     model: 'Model 9B Orion No.HB-LAH',
@@ -45,8 +41,12 @@ async function seed () {
 }
 
 seed()
-  .catch(err => {
-    console.error(red('Oh no! Something went wrong!'))
-    console.error(err)
-    db.close()
-  })
+.catch(err => {
+  console.error(red('Oh no! Something went wrong!'))
+  console.error(err)
+  db.close()
+})
+
+// await AircraftsCountries.create({
+//   type: 'TRY AGAIN',
+// })
