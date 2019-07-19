@@ -9,7 +9,7 @@ const { Aircrafts } = require('../../db/models')
 router.get('/', async (req, res, next) => {
   console.log("Looking for All Aircrafts!")
   try {
-    const allAircrafts = await Aircrafts.findAll();
+    const allAircrafts = await Aircrafts.findAll({ include: { all: true } });
     res.status(200).json(allAircrafts)
   } catch (err) {
     next(err)
