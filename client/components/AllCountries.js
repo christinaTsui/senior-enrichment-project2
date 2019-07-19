@@ -40,6 +40,9 @@ class AllCountries extends React.Component {
         <h2 id="all-countries-h2">{countries.length} Countries with Aircrafts</h2>
         <p id="all-countries-p">Browse and add countries that build beautiful and powerful planes to our growing list at Planesaurus.</p>
         <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1333&q=80"/>
+
+        <h3>Listed Countries</h3>
+
         <ul>
           {countries.map(country => {
             return (

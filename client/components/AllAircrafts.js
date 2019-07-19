@@ -18,10 +18,14 @@ class AllAircrafts extends React.Component {
     if (loading) return <div>Loading...</div>
     return (
       <div>
+
         <AddAircraftForm />
         <h2 id="all-aircrafts-h2">{aircrafts.length} Aircrafts Available</h2>
         <p id="all-aircrafts-p">Browse and Add planes to your heart's content.</p>
         <img src="https://images.unsplash.com/photo-1484666086787-6cd0ccd39860?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80"/>
+
+        <h3>Listed Aircrafts</h3>
+        
         <ul>
           {aircrafts.map(aircraft => {
             return (
