@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import axios from 'axios';
 
 export default class AddAircraftForm extends Component {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
       make: '',
       model: '',
@@ -26,6 +26,7 @@ export default class AddAircraftForm extends Component {
     });
     console.log(this.state)
   }
+
   handleSubmit(event) {
     console.log("I am in handleSubmit")
     event.preventDefault();
