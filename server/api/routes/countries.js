@@ -53,14 +53,14 @@ router.put('/:id', async (req, res, next) => {
   }
 })
 
-// router.delete('/:id', async (req, res, next) => {
-//   try {
-//     let country = Country.destroy(req.body, {returning: true, where: {id: req.body.id}})
-//     res.status(201).json(country)
-//   } catch (err) {
-//     next(err)
-//   }
-// })
+router.delete('/:id', async (req, res, next) => {
+  try {
+    let country = Country.destroy(req.body, {returning: true, where: {id: req.body.id}})
+    res.json(country)
+  } catch (err) {
+    next(err)
+  }
+})
 
 module.exports = router;
 
