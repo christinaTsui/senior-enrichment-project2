@@ -30,6 +30,8 @@ class AllCountries extends React.Component {
                 <Switch>
                   <Route exact path={`/Countries/${country.id}`} component={SingleCountry}/>
                 </Switch>
+                <button id="delete-button" type="submit" >X</button>
+                <button id="edit-button" type="submit" >Edit</button>
               </li>
             )})}
         </ul>
