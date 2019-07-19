@@ -1,4 +1,4 @@
-reconst db = require('./server/db/_db')
+const db = require('./server/db/_db');
 const {green, red} = require('chalk')
 const { Aircrafts, Countries } = require('./server/db/models')
 const Sequelize = require('sequelize')
