@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 
 export default class AddAircraftForm extends Component {
   constructor(props) {
@@ -40,6 +41,12 @@ export default class AddAircraftForm extends Component {
       succeeded: '',
       country: '',
     });
+
+    axios.post(`/api/aircrafts`, this.state)
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      })
   }
 
   render() {
