@@ -46,7 +46,7 @@ router.post('/', async (req, res, next) => {
 
 router.put('/:id', async (req, res, next) => {
   try {
-    let country = Country.update(req.body, {returning: true, where: {id: req.body.id}})
+    let country = Countries.update(req.body, {returning: true, where: {id: req.body.id}})
     res.status(201).json(country)
   } catch (err) {
     next(err)
@@ -55,7 +55,7 @@ router.put('/:id', async (req, res, next) => {
 
 router.delete('/:id', async (req, res, next) => {
   try {
-    let country = Country.destroy(req.body, {returning: true, where: {id: req.body.id}})
+    let country = Countries.destroy(req.body, {returning: true, where: {id: req.body.id}})
     res.json(country)
   } catch (err) {
     next(err)
