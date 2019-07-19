@@ -3,6 +3,7 @@ import {Switch, Route, Link} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { fetchAircrafts } from '../reducers';
 import SingleAircraft from './SingleAircraft'
+import AddAircraftForm from './AddAircraftForm'
 
 class AllAircrafts extends React.Component {
 
@@ -17,6 +18,7 @@ class AllAircrafts extends React.Component {
     if (loading) return <div>Loading...</div>
     return (
       <div>
+        <AddAircraftForm />
         <h2 id="all-aircrafts-h2">{aircrafts.length} Aircrafts Available</h2>
         <p id="all-aircrafts-p">Browse and Add planes to your heart's content.</p>
         <img src="https://images.unsplash.com/photo-1484666086787-6cd0ccd39860?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80"/>
