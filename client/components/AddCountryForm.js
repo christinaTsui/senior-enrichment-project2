@@ -3,18 +3,14 @@ import axios from 'axios';
 
 export default class AddCountryForm extends Component {
   constructor(props) {
+
     super(props);
     this.state = {
-      make: '',
-      model: '',
-      year: '',
-      type: '',
-      cost: '',
-      imageUrl: '',
-      description: '',
-      succeeded: '',
-      country: '',
+      name: '',
+      GFI: '',
+      flagUrl: '',
     };
+
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -32,15 +28,9 @@ export default class AddCountryForm extends Component {
     event.preventDefault();
     //connect to the store here using subscribe
     this.setState({
-      make: '',
-      model: '',
-      year: '',
-      type: '',
-      cost: '',
-      imageUrl: '',
-      description: '',
-      succeeded: '',
-      country: '',
+      name: '',
+      GFI: '',
+      flagUrl: '',
     });
 
     axios.post(`/api/aircrafts`, this.state)
@@ -56,77 +46,36 @@ export default class AddCountryForm extends Component {
       <form onSubmit={this.handleSubmit}>
         <h2>Add A Country</h2>
         <label>
-          Designer/Manufacturer:
+          Name:
           <input
             type="text"
-            name="make"
+            name="name"
             onChange={this.handleChange}
-            value={this.state.make}
+            value={this.state.name}
           />
         </label><br/>
 
         <label>
-          Model:
+          GFI:
           <input
             type="text" //type will validate
-            name="model" //name will match the state key value pair
+            name="GFI" //name will match the state key value pair
             onChange={this.handleChange}
-            value={this.state.model} //this will set the value to something
+            value={this.state.GFI} //this will set the value to something
           />
         </label><br/>
 
         <label>
-          Year Debutted:
-          <input
-            type="number" //type will validate
-            name="year" //name will match the state key value pair
-            onChange={this.handleChange}
-            value={this.state.year} //this will set the value to something
-          />
-        </label><br/>
-
-        {/* would be nicer if this was a radio form..i tried doing it but it broke because syntax was not in a form so I kept it at text type */}
-        <label>
-          Type:
+          FlagUrl:
           <input
             type="text" //type will validate
-            name="type" //name will match the state key value pair
+            name="flagUrl" //name will match the state key value pair
             onChange={this.handleChange}
-            value={this.state.type} //this will set the value to something
+            value={this.state.flagUrl} //this will set the value to something
           />
         </label><br/>
 
-        <label>
-          Cost:
-          <input
-            type="number" //type will validate
-            name="cost" //name will match the state key value pair
-            onChange={this.handleChange}
-            value={this.state.cost} //this will set the value to something
-          />
-        </label><br/>
-
-        <label>
-          imageUrl:
-          <input
-            type="text" //type will validate
-            name="imageUrl" //name will match the state key value pair
-            onChange={this.handleChange}
-            value={this.state.imageUrl} //this will set the value to something
-          />
-        </label><br/>
-
-        <label>
-          Description:
-          <input
-            type="text" //type will validate
-            name="description" //name will match the state key value pair
-            onChange={this.handleChange}
-            value={this.state.description} //this will set the value to something
-          />
-        </label><br/>
-
-        <button type="submit">Submit New Aircraft</button>
+        <button type="submit">Submit New Country</button>
       </form>
     );
   }

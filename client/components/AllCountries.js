@@ -3,7 +3,7 @@ import {Switch, Route, Link} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { fetchCountries } from '../reducers';
 import SingleCountry from './SingleCountry';
-// import AddCountryForm from './AddCountryForm'
+import AddCountryForm from './AddCountryForm'
 
 class AllCountries extends React.Component {
 
@@ -18,7 +18,7 @@ class AllCountries extends React.Component {
     if (loading) return <div>Loading...</div>
     return (
       <div>
-        {/* <AddCountryForm/> */}
+        <AddCountryForm/>
         <h2 id="all-countries-h2">{countries.length} Countries with Aircrafts</h2>
         <p id="all-countries-p">Browse and add countries that build beautiful and powerful planes to our growing list at Planesaurus.</p>
         <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1333&q=80"/>
