@@ -119,10 +119,33 @@ export default class AddAircraftForm extends Component {
         <label>
           Description:
           <input
+          // Find text area for this type in html
             type="text" //type will validate
             name="description" //name will match the state key value pair
             onChange={this.handleChange}
             value={this.state.description} //this will set the value to something
+          />
+        </label><br/>
+
+        <label>
+          Succeeded:
+          <input
+          // Find text area for this type in html
+            type="text" //type will validate
+            name="succeeded" //name will match the state key value pair
+            onChange={this.handleChange}
+            value={this.state.succeeded} //this will set the value to something
+          />
+        </label><br/>
+
+        <label>
+          Country:
+          <input
+          // Find text area for this type in html
+            type="text" //type will validate
+            name="country" //name will match the state key value pair
+            onChange={this.handleChange}
+            value={this.state.country} //this will set the value to something
           />
         </label><br/>
 

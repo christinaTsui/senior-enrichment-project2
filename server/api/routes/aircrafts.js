@@ -33,10 +33,10 @@ router.get('/:id', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
   console.log("Posting an Aircraft!")
   try {
-    await Aircrafts.create(req.body);
+    let aircraft = await Aircrafts.create(req.body);
     const output = {
       message: 'Created successfully',
-      article: article
+      aircraft: aircraft,
     }
     res.status(201).json(output)
   } catch (err) {
@@ -47,7 +47,7 @@ router.post('/', async (req, res, next) => {
 router.put('/:id', async (req, res, next) => {
   try {
     let aircraft = Aircrafts.update(req.body, {returning: true, where: {id: req.body.id}})
-    res.status(201).json(aircrafts)
+    res.status(201).json(aircraft)
   } catch (err) {
     next(err)
   }

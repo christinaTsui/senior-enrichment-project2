@@ -13,7 +13,6 @@ class AllCountries extends React.Component {
     this.state = {
       key: ''
     }
-
   }
 
   handleClick(event) {
