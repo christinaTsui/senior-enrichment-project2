@@ -28,7 +28,6 @@ router.get('/:id', async (req, res, next) => {
   }
 });
 
-
 //untested routes
 
 router.post('/', async (req, res, next) => {
