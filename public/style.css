@@ -71,7 +71,14 @@ h2 {
   font-family: cursive;
 }
 
-#delete-button {
-  padding: 10px;
+li {
+  font-size: 20px;
+}
 
+#submit-button {
+  padding: 10px;
+}
+
+#delete-button {
+  margin: 10px;
 }
