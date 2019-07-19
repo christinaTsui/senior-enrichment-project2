@@ -85,7 +85,7 @@ export default class AddAircraftForm extends Component {
           />
         </label><br/>
 
-        {/* would be nicer if this was a radio form..i tried doing it but it broke because syntax was not in a form so I kept it at text type */}
+        {/* would be nicer if this was a radio form..i tried doing it but it broke because syntax was not in it's own form so I kept it at text type */}
         <label>
           Type:
           <input

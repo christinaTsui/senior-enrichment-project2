@@ -4,8 +4,27 @@ import { connect } from 'react-redux'
 import { fetchCountries } from '../reducers';
 import SingleCountry from './SingleCountry';
 import AddCountryForm from './AddCountryForm'
+import axios from 'axios'
 
 class AllCountries extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      key: ''
+    }
+
+  }
+
+  handleClick(event) {
+    console.log("A click has been registered")
+    if (event.target.id === 'edit-button') {
+      // figure out what the second parameter for axios.put should be
+      axios.put(`/api/countries/${event.target.value}`)
+    } else if (event.target.id === 'delete-button') {
+      axios.delete(`/api/countries/${event.target.value}`)
+    }
+  }
 
   componentDidMount() {
     console.log("Component is Mounting")
@@ -30,8 +49,8 @@ class AllCountries extends React.Component {
                 <Switch>
                   <Route exact path={`/Countries/${country.id}`} component={SingleCountry}/>
                 </Switch>
-                <button id="delete-button" type="submit" >X</button>
-                <button id="edit-button" type="submit" >Edit</button>
+                <button id="delete-button" type="submit" value={country.id} onClick={this.handleClick}>X</button>
+                <button id="edit-button" type="submit" value={country.id}>Edit</button>
               </li>
             )})}
         </ul>
@@ -48,6 +67,7 @@ const mapStateHere = (state) => ({
 
 // React => Redux
 const mapDispatchHere = (dispatch) => ({
+  //should i dispatch the form state to redux too? I probably can do that. I'll mess up the entire project without knowing how to implement the if statement from dispatch and I am unable to console.log what is happening in mapDispatchHere. Read up more on React Redux forms and look over To-Do list workshop.
   fetchCountries: () => {
     const thunk = fetchCountries()
     dispatch(thunk)
