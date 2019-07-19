@@ -36,7 +36,7 @@ router.post('/', async (req, res, next) => {
     let country = await Countries.create(req.body);
     const output = {
       message: 'Created successfully',
-      country: country
+      country: country,
     }
     res.status(201).json(output)
   } catch (err) {

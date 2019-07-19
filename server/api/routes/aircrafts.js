@@ -28,7 +28,6 @@ router.get('/:id', async (req, res, next) => {
   }
 });
 
-//untested routes
 
 router.post('/', async (req, res, next) => {
   console.log("Posting an Aircraft!")
@@ -43,6 +42,7 @@ router.post('/', async (req, res, next) => {
     next(err)
   }
 });
+//untested routes
 
 router.put('/:id', async (req, res, next) => {
   try {
