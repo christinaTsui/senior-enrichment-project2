@@ -33,8 +33,12 @@ router.get('/:id', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
   console.log("Posting a Country!")
   try {
-    const thePostedOne = await Countries.create(req.body);
-    res.status(200).json(thePostedOne)
+    await Countries.create(req.body);
+    const output = {
+      message: 'Created successfully',
+      article: article
+    }
+    res.status(201).json(output)
   } catch (err) {
     next(err)
   }
