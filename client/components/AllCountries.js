@@ -40,11 +40,13 @@ class AllCountries extends React.Component {
   }
 }
 
+// Redux => React
 const mapStateHere = (state) => ({
   loading: state.loading,
   countries: state.countries,
 })
 
+// React => Redux
 const mapDispatchHere = (dispatch) => ({
   fetchCountries: () => {
     const thunk = fetchCountries()
@@ -53,26 +55,3 @@ const mapDispatchHere = (dispatch) => ({
 })
 
 export default connect(mapStateHere, mapDispatchHere)(AllCountries);
-
-
-//individual aircrafts and such
-// {aircrafts.map(aircraft => {
-//   return (
-//     <div key={aircraft.id}>
-//       <img src={aircraft.imageUrl}/>
-//       <h2> {aircraft.name} </h2>
-//     </div>
-//   )
-// })}
-
-
-// import React from 'react'
-
-// const AllCountries = () => {
-//   // if (loading) return <div>Loading...</div>;
-//   return (
-//     <div>All Countries</div>
-//   )
-// }
-
-// export default AllCountries;

@@ -56,13 +56,3 @@ const mapDispatch = (dispatch) => ({
 
 export default connect(mapState, mapDispatch)(AllAircrafts);
 
-
-//individual aircrafts and such
-// {aircrafts.map(aircraft => {
-//   return (
-//     <div key={aircraft.id}>
-//       <img src={aircraft.imageUrl}/>
-//       <h2> {aircraft.name} </h2>
-//     </div>
-//   )
-// })}
