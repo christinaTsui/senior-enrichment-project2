@@ -75,7 +75,7 @@ export default class AddCountryForm extends Component {
           />
         </label><br/>
 
-        <button type="submit">Submit New Country</button>
+        <button id="submit-button" type="submit">Submit New Country</button>
       </form>
     );
   }

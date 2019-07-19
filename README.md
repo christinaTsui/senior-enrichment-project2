@@ -64,60 +64,55 @@ v
   * see details about an aircraft on the **Single Aircraft** view, including that aircrafts' country
 
 - Actions: as a user I...
-  * can create a country
+  [*] can create a country
   * can edit a country's info, including adding/removing an aircraft to/from that country
-  * can delete a country
-  * can create an aircraft
+  [*] can delete a country
+  [*] can create an aircraft
   * can edit an aircraft's info, including the country that owns the aircraft
-  * can delete an aircraft
+  [*] can delete an aircraft
 
 ### Routes
 
-```
 GET
 [***] all countries
   - populated with aircrafts
-- a country by id
+[***] a country by id
   - populated with aircrafts
   - excluding the description of the aircraft
 - top 5 countries
   - by GFI (0 is strongest (top), 10 is weakest (bottom))
-  - sorted strongest to weakest
-- all aircrafts
+  [***] sorted strongest to weakest
+[***] all aircrafts
   - populated with the name of the country that owns each aircraft
   - excluding the descriptions
-- an aircraft by id
+[***] an aircraft by id
   - populated with only the name of the country that owns the aircraft
-```
 
-```
+
 POST
-- new country
-- new aircraft
-```
+[*] new country
+[*] new aircraft
 
-```
 PUT
-- update country info for one country
-- update aircraft info for one aircraft
-```
+[*] update country info for one country
+[*] update aircraft info for one aircraft
 
-```
+
 DELETE
-- a country
+[*] a country
   - deletes all aircrafts associated with the country
-- an aircraft
-```
+[*] an aircraft
+
 
 ### How to test functionality without a frontend
-- GET: use your browser
+[*] GET: use your browser
 - POST / PUT / DELETE :
  - CLI (command line interface) with `curl`
    - e.g. `curl -H "Content-Type: application/json" -X POST -d '{"username":"kate","password":"1234"}' http://localhost:3000/api/login`
    - `-H`: headers. `-X`: verb. `-d`: data (must be of the type specified in headers). http://[address]:[port]/[route_path]
  - [Postman](https://www.getpostman.com/)
    ![](https://www.dropbox.com/s/4fk3b90cd0i1a5y/postman_post.png?raw=true)
-- Databases: use Sequelize in your routes and see if you are receiving what you expect
+[*] Databases: use Sequelize in your routes and see if you are receiving what you expect
 
 
 ## Video Walkthrough
