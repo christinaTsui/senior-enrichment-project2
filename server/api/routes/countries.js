@@ -33,10 +33,10 @@ router.get('/:id', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
   console.log("Posting a Country!")
   try {
-    await Countries.create(req.body);
+    let country = await Countries.create(req.body);
     const output = {
       message: 'Created successfully',
-      article: article
+      country: country
     }
     res.status(201).json(output)
   } catch (err) {
@@ -44,7 +44,23 @@ router.post('/', async (req, res, next) => {
   }
 });
 
+router.put('/:id', async (req, res, next) => {
+  try {
+    let country = Country.update(req.body, {returning: true, where: {id: req.body.id}})
+    res.status(201).json(country)
+  } catch (err) {
+    next(err)
+  }
+})
 
+// router.delete('/:id', async (req, res, next) => {
+//   try {
+//     let country = Country.destroy(req.body, {returning: true, where: {id: req.body.id}})
+//     res.status(201).json(country)
+//   } catch (err) {
+//     next(err)
+//   }
+// })
 
 module.exports = router;
 

@@ -30,6 +30,7 @@ class AllAircrafts extends React.Component {
                 <Switch>
                   <Route exact path={`/Aircrafts/${aircraft.id}`} component={SingleAircraft}/>
                 </Switch>
+                <button type="submit" >X</button>
               </li>
             )
           })}

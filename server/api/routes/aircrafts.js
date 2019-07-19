@@ -44,5 +44,19 @@ router.post('/', async (req, res, next) => {
   }
 });
 
+// router.delete('/', async (req, res, next) => {
+//   console.log("Posting an Aircraft!")
+//   try {
+//     await Aircrafts.create(req.body);
+//     const output = {
+//       message: 'Created successfully',
+//       article: article
+//     }
+//     res.status(201).json(output)
+//   } catch (err) {
+//     next(err)
+//   }
+// });
+
 
 module.exports = router;

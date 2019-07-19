@@ -126,7 +126,7 @@ export default class AddAircraftForm extends Component {
           />
         </label><br/>
 
-        <button type="submit">Submit New Aircraft</button>
+        <button id="delete-button" type="submit">Submit New Aircraft</button>
       </form>
     );
   }
