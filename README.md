@@ -135,3 +135,23 @@ Once you've recorded your screencast, please *upload it to YouTube as an unliste
 - Frontend logic and functionality (25%)
 - Design + Bonus features (up to 10 Extra Credit points)
 
+
+
+
+// Different ways to try rendering SingleAircraft below...
+// () => <Dashboard isAuthed={true} />
+// render={(props) => <Dashboard {...props} isAuthed={true} />
+
+
+//Git Problem CheatSheet
+//git add .
+//git commit
+//git push
+
+//write something...dont' like it
+//git stash
+
+//write something else...decide the previous one on line 151 was better
+//git reset --hard HEAD
+//what to start where i left off on git stash...
+//git stash pop

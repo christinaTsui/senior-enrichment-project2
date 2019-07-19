@@ -1,54 +1,5 @@
 import React, { Component } from 'react';
 
-// Initial
-// const AddAircraftForm = () => {
-//   return (
-//     <div></div>
-//   )
-// }
-
-//Second Try
-// class AddAircraftForm extends React.Component {
-//   constructor() {
-//     super();
-//     this.state = {
-//       name: '',
-//       GFI: '',
-//       flagUrl: '',
-//     };
-
-//     // this.handleChange = this.handleChange.bind(this);
-//     // this.handleSubmit = this.handleSubmit.bind(this);
-//   }
-
-//   handleChange = (event) => {
-//     this.setState({value: event.target.name});
-//   }
-
-//   handleSubmit = (event) => {
-//     alert('A name was submitted: ' + this.state.value);
-//     event.preventDefault();
-//   }
-
-//   render() {
-//     return (
-//       <form onSubmit={this.handleSubmit}>
-//         <label>
-//           Name:
-//           <input type="text" value={this.state.name} onChange={this.handleChange} />
-//         </label>
-//         <input type="submit" value="Submit" />
-
-//         <label>
-//           GFI:
-//           <input type="text" value={this.state.GFI} onChange={this.handleChange} />
-//         </label>
-//         <input type="submit" value="Submit" />
-//       </form>
-//     );
-//   }
-// }
-
 export default class AddAircraftForm extends Component {
   constructor(props) {
     super();
@@ -95,6 +46,7 @@ export default class AddAircraftForm extends Component {
     console.log("this is props", this.props)
     return (
       <form onSubmit={this.handleSubmit}>
+        <h2>Add An Aircraft</h2>
         <label>
           Designer/Manufacturer:
           <input
@@ -103,7 +55,7 @@ export default class AddAircraftForm extends Component {
             onChange={this.handleChange}
             value={this.state.make}
           />
-        </label>
+        </label><br/>
 
         <label>
           Model:
@@ -113,7 +65,7 @@ export default class AddAircraftForm extends Component {
             onChange={this.handleChange}
             value={this.state.model} //this will set the value to something
           />
-        </label>
+        </label><br/>
 
         <label>
           Year Debutted:
@@ -123,7 +75,7 @@ export default class AddAircraftForm extends Component {
             onChange={this.handleChange}
             value={this.state.year} //this will set the value to something
           />
-        </label>
+        </label><br/>
 
         {/* would be nicer if this was a radio form..i tried doing it but it broke because syntax was not in a form so I kept it at text type */}
         <label>
@@ -134,7 +86,7 @@ export default class AddAircraftForm extends Component {
             onChange={this.handleChange}
             value={this.state.type} //this will set the value to something
           />
-        </label>
+        </label><br/>
 
         <label>
           Cost:
@@ -144,7 +96,7 @@ export default class AddAircraftForm extends Component {
             onChange={this.handleChange}
             value={this.state.cost} //this will set the value to something
           />
-        </label>
+        </label><br/>
 
         <label>
           imageUrl:
@@ -154,7 +106,7 @@ export default class AddAircraftForm extends Component {
             onChange={this.handleChange}
             value={this.state.imageUrl} //this will set the value to something
           />
-        </label>
+        </label><br/>
 
         <label>
           Description:
@@ -164,7 +116,7 @@ export default class AddAircraftForm extends Component {
             onChange={this.handleChange}
             value={this.state.description} //this will set the value to something
           />
-        </label>
+        </label><br/>
 
         <button type="submit">Submit New Aircraft</button>
       </form>
